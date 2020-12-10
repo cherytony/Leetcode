@@ -6,3 +6,4 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
+        pass
