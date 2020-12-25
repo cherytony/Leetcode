@@ -6,7 +6,19 @@
 
 # @lc code=start
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
-        
-# @lc code=end
+    def maxProfit(self, prices):
 
+        size = len(prices)
+
+        dp0 = 0
+        dp1 = -prices[0]
+
+        for i in range(1, size):
+            tmp = dp0
+            dp0 = max(dp0, dp1+prices[i])
+            dp1 = max(dp1, tmp-prices[i])
+
+        return dp0
+
+
+# @lc code=end
