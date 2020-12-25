@@ -20,6 +20,8 @@ class Solution:
 
                 else:
                     r.append(result[i-1][j]+result[i-1][j-1])
+                
+            result.append(r)
         
 
         return result
