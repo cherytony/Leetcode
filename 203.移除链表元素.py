@@ -13,5 +13,21 @@
 
 class Solution:
     def removeElements(self, head: ListNode, val: int) -> ListNode:
-# @lc code=end
 
+        while head and head.val == val:
+            head = head.next
+
+        pre, cur = head,head
+
+        while cur:
+            if cur.val == val:
+                pre.next = cur.next
+            else:
+                pre = cur
+        
+            cur = cur.next
+        
+        return head
+
+
+# @lc code=end
