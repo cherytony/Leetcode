@@ -8,14 +8,19 @@
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
 
-        from collections import Counter
+        count, condition = 0,None
 
-        look_up = Counter(nums)
+        for i, key in enumerate(nums):
 
-        for k,v in look_up.items():
-            if v >= len(nums)/2:
-                return k
+            if count == 0:
+                condition = key
+
+            if key == condition:
+                count += 1
+            else:
+                count -= 1
+
+        return condition
 
 
 # @lc code=end
-
